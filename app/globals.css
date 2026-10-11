@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: #ebe5d8;
+  --color-ink: #16130f;
+  --color-ink-soft: #3d3831;
+  --color-muted: #5c554b;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-ink);
+  outline-offset: 6px;
+}
+
+/* The only animation on the site: a quick fade when the thought changes. */
+@keyframes thought-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .thought-fade {
+    animation: thought-fade 200ms ease-out;
+  }
 }
