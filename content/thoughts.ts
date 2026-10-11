@@ -7,7 +7,9 @@
 
 export type Thought = { text: string; date: string };
 
-export const thoughts: Thought[] = [];
+export const thoughts: Thought[] = [
+  { text: "first thought: am i working hard enough?", date: "2026-10-10" }
+];
 
 // Shown only in development, and only while `thoughts` is empty.
 const placeholders: Thought[] = [
