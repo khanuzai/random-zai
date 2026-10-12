@@ -8,7 +8,8 @@
 export type Thought = { text: string; date: string };
 
 export const thoughts: Thought[] = [
-  { text: "first thought: am i working hard enough?", date: "2026-10-10" }
+  { text: "first thought: am i working hard enough?", date: "2026-10-10" },
+  { text: "am i living for what i want or for what others want me to want?", date: "2026-10-12" }
 ];
 
 // Shown only in development, and only while `thoughts` is empty.
